@@ -5,6 +5,10 @@ Requirements
 1. Java 8
 2. Maven
 
+Package the example with:
+
+    mvn clean package
+
 Service 1 creates a simple rest service that return a string with a miliseconds padding, service 2 consumes service 1 and returns same value with other wrapper.
 
 ## Service 1 - Produces ##
