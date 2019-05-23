@@ -1,6 +1,7 @@
 package org.rage.swarm.service2.rest;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.Map;
 
 import javax.inject.Inject;
@@ -55,7 +56,7 @@ public class MyNameResource {
 		final ObjectMapper mapper = new ObjectMapper();
 		final ObjectReader reader = mapper.reader();
 		final JsonFactory factory = new JsonFactory();
-		final JsonParser parser = factory.createParser(new ByteBufInputStream(payload));
+		final JsonParser parser = factory.createParser((InputStream)new ByteBufInputStream(payload));
 		return reader.readValue(parser, Map.class);
 	}
 }
